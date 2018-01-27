@@ -1,14 +1,13 @@
-
   // Initialize Firebase
-  // TODO: Replace with your project's customized code snippet
   var config = {
     apiKey: "AIzaSyDxKqUB6_fZgmxLrnP6RclWpnXDPWY-t8M",
     authDomain: "healthy-friends.firebaseapp.com",
     databaseURL: "https://healthy-friends.firebaseio.com",
-    storageBucket: "",
-    messagingSenderId: "259118374654",
+    projectId: "healthy-friends",
+    storageBucket: "healthy-friends.appspot.com",
+    messagingSenderId: "259118374654"
   };
-  firebase.initializeApp(config);
+  firebase.initializeApp(config)
 
 
 function check(form)/*function to check userid & password*/
