@@ -46,7 +46,7 @@
 
 function check(form)/*function to check userid & password*/ {
   /*the following code checkes whether the entered userid and password are matching*/
-  if(form.userid.value == "foo@email.com" && form.passwrd.value == "password") {
+  if(form.userid.value != "" && form.passwrd.value != "") {
     window.open('landingPage.html');/*opens the target page while Id & password matches*/
   } else {
     alert("Error Password or Username");/*displays error message*/
