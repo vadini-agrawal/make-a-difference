@@ -36,14 +36,15 @@
 	  <div class="checkbox">
 	    <label><input type="checkbox"> Remember me</label>
 	  </div>
-	  <button type="submit" onclick="check(this.form)" class="btn btn-default">Submit</button>
+	  <button value="login" type="submit" onclick="check(this.form)" class="btn btn-default">Submit</button>
 	</form>
 	<script language="javascript">
 	function check(form)/*function to check userid & password*/
 	{
 	 /*the following code checkes whether the entered userid and password are matching*/
-	 if(form.userid.value == "myuserid" && form.pswrd.value == "mypswrd")
+	 if(form.userid.value == "foo@email.com" && form.pswrd.value == "password")
 	  {
+	  	alert("Login worked!")
 	    window.open('landingPage.html')/*opens the target page while Id & password matches*/
 	  }
 	 else
