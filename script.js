@@ -2,11 +2,11 @@
   // Initialize Firebase
   // TODO: Replace with your project's customized code snippet
   var config = {
-    apiKey: "<API_KEY>",
-    authDomain: "<PROJECT_ID>.firebaseapp.com",
+    apiKey: "AIzaSyDxKqUB6_fZgmxLrnP6RclWpnXDPWY-t8M",
+    authDomain: "healthy-friends.firebaseapp.com",
     databaseURL: "https://healthy-friends.firebaseio.com",
-    storageBucket: "<BUCKET>.appspot.com",
-    messagingSenderId: "<SENDER_ID>",
+    storageBucket: "",
+    messagingSenderId: "259118374654",
   };
   firebase.initializeApp(config);
 
