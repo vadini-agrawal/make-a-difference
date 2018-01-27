@@ -49,7 +49,13 @@ firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error
         }
         console.log(error);
         // [END_EXCLUDE]
-      });
+        firebase.auth().currentUser.sendEmailVerification().then(function() {
+        // Email Verification sent!
+        // [START_EXCLUDE]
+        alert('Email Verification Sent!');
+        // [END_EXCLUDE]
+        });
+    });
 
 function check(form)/*function to check userid & password*/
   {
