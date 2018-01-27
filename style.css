@@ -22,6 +22,10 @@
 	background-color: grey;
 }
 
+.body-landing {
+	margin: 5vh;
+}
+
 @media only screen and (max-width: 500px) {
 	font-size: 3vh;
 }
