@@ -9,6 +9,9 @@
 
 	<!-- firebase url -->
 	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
 
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -27,6 +30,9 @@
 	<input type="button" onclick="check(this.form)" value="Login"/>
 	<input type="reset" value="Cancel"/>
 	</form>-->
+	<div class="open-image">
+
+	</div>
 
 	<form name="login">
  		 <div class="form-group">
@@ -35,9 +41,10 @@
   		</div>
 	  <div class="form-group">
 	    <label for="pwd">Password:</label>
-	    <input name="pswrd" type="password" class="form-control" id="pwd">
+	    <input name="pswrd" type="password" class="form-control" id="password">
 	  </div>
-	  <button id="submit-login" value="login" type="submit" onclick="check(this.form)" class="btn btn-default">Submit</button>
+	  <button id="submit-login" value="login" type="submit" onclick="check(this.form)" class="btn btn-default">Sign In</button>
+	  <button id="signUp" value="login" type="signUp" onclick="check(this.form)" class="btn btn-default">Sign Up</button>
 	</form>
 </body>
 
