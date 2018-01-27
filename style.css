@@ -10,10 +10,12 @@
 }
 
 #submit-login {
-	margin-top: 2vh;
+	margin-top: 5vh;
 	height: 10vh;
 	width: 30vw;
 	font-size: 4vh;
+	 margin:0 auto;
+    display:block;
 }
 
 #map {
