@@ -55,7 +55,8 @@ firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error
         alert('Email Verification Sent!');
         // [END_EXCLUDE]
         });
-    });
+      });
+    }
 
 function check(form)/*function to check userid & password*/ {
   /*the following code checkes whether the entered userid and password are matching*/
