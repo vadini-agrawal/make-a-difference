@@ -41,6 +41,7 @@
         // [END_EXCLUDE]
         });
       });
+      writeUserData(email, password);
     }
 
 function check(form)/*function to check userid & password*/ {
@@ -50,4 +51,10 @@ function check(form)/*function to check userid & password*/ {
   } else {
     alert("Error Password or Username");/*displays error message*/
   }
+}
+function writeUserData(email, password) {
+  firebase.database().ref('user').push({
+    email: email,
+    password: password,
+  });
 }
