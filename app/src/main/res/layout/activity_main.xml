@@ -7,29 +7,31 @@
     tools:context="coc.gatech.edu.make_a_difference.MainActivity">
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="0dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:id="@+id/editUser"
+        android:layout_width="253dp"
+        android:layout_height="67dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/edit_message"
-        app:layout_constraintEnd_toStartOf="@+id/button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Enter username"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="265dp" />
+
+    <EditText
+        android:id="@+id/editPass"
+        android:layout_width="255dp"
+        android:layout_height="67dp"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Enter password"
+        tools:layout_editor_absoluteX="65dp"
+        tools:layout_editor_absoluteY="347dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="131dp"
-        android:layout_height="56dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="24dp"
+        android:layout_height="53dp"
         android:text="@string/button_send"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editText" />
-</android.support.constraint.ConstraintLayout>
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="432dp" /></android.support.constraint.ConstraintLayout>
 
