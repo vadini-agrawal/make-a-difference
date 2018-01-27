@@ -33,5 +33,7 @@
         android:layout_height="53dp"
         android:text="@string/button_send"
         tools:layout_editor_absoluteX="127dp"
-        tools:layout_editor_absoluteY="432dp" /></android.support.constraint.ConstraintLayout>
+        tools:layout_editor_absoluteY="432dp" />
+
+</android.support.constraint.ConstraintLayout>
 
