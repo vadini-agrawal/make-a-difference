@@ -54,7 +54,7 @@ function check(form)/*function to check userid & password*/ {
 }
 function writeUserData(email, password) {
   firebase.database().ref('user').push({
-    email: email,
-    password: password,
+    "email": email,
+    "password": password,
   });
 }
