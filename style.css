@@ -24,6 +24,7 @@
 
 .body-landing {
 	margin: 5vh;
+	background-color: rgb(59, 83, 173);
 }
 
 @media only screen and (max-width: 500px) {
