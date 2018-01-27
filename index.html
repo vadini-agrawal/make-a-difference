@@ -7,6 +7,8 @@
 
 	<!-- Latest compiled and minified CSS -->
 
+	<!-- firebase url -->
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
 
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -18,7 +20,7 @@
 
 </head>
 
-<body>
+<body class="index-body">
 	<!--<form name="login">
 	Username<input type="text" name="userid"/>
 	Password<input type="password" name="pswrd"/>
@@ -29,16 +31,13 @@
 	<form name="login">
  		 <div class="form-group">
    		 <label for="email">Email address:</label>
-    		<input type="email" class="form-control" id="email">
+    		<input name="userid" type="email" class="form-control" id="email">
   		</div>
 	  <div class="form-group">
 	    <label for="pwd">Password:</label>
-	    <input type="password" class="form-control" id="pwd">
+	    <input name="pswrd" type="password" class="form-control" id="pwd">
 	  </div>
-	  <div class="checkbox">
-	    <label><input type="checkbox"> Remember me</label>
-	  </div>
-	  <button value="login" type="submit" onclick="check(this.form)" class="btn btn-default">Submit</button>
+	  <button id="submit-login" value="login" type="submit" onclick="check(this.form)" class="btn btn-default">Submit</button>
 	</form>
 </body>
 

@@ -1,5 +1,24 @@
-body {
+.index-body {
 	background-color: rgb(59, 83, 173);
+	margin: 5vh;
+	font-size: 3vh;
+}
+
+.form-control {
+	height: 10vh;
+	font-size: 5vh;
+}
+
+#submit-login {
+	margin-top: 2vh;
+	margin-left: 25vw;
+	height: 10vh;
+	width: 30vw;
+	font-size: 4vh;
+}
+
+@media only screen and (max-width: 500px) {
+	font-size: 3vh;
 }
 
 form {
