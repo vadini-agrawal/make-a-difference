@@ -7,22 +7,7 @@
     storageBucket: "healthy-friends.appspot.com",
     messagingSenderId: "259118374654"
   };
-  firebase.initializeApp(config)
-
-
-firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // ...
-});
-
-firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // ...
-});
+  firebase.initializeApp(config);
 
     function handleSignUp() {
       var email = document.getElementById('email').value;
@@ -55,13 +40,14 @@ firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error
         alert('Email Verification Sent!');
         // [END_EXCLUDE]
         });
-    });
+      });
+    }
 
 function check(form)/*function to check userid & password*/ {
   /*the following code checkes whether the entered userid and password are matching*/
   if(form.userid.value == "foo@email.com" && form.passwrd.value == "password") {
     window.open('landingPage.html');/*opens the target page while Id & password matches*/
   } else {
-    alert("Error Password or Username")/*displays error message*/;
+    alert("Error Password or Username");/*displays error message*/
   }
 }
