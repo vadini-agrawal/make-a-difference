@@ -1,3 +1,14 @@
+.open-image {
+	padding-top: 8vh;
+	height: 45vh;
+}
+
+.open-image img {
+	height: 30vh;
+	margin: 0 auto;
+	display: block;
+}
+
 .index-body {
 	background-color: rgb(59, 83, 173);
 	margin: 5vh;
