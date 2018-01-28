@@ -1,48 +1,12 @@
 .open-image {
-	//padding-top: 5vh;
-	height: 40vh;
-	//position: fixed;
-}
-
-#myVideo {
-   position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
+	padding-top: 8vh;
+	height: 45vh;
 }
 
 .open-image img {
 	height: 30vh;
 	margin: 0 auto;
 	display: block;
-	animation: 1s infinite beatHeart;
-}
-
-form {
-	position: fixed;
-	width: 80%;
-	margin-bottom: 5vh;
-	margin-right: 10%;
-	display: block;
-}
-
-@keyframes beatHeart {
-  0% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(1.1);
-  }
-  40% {
-    transform: scale(1);
-  }
-  60% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 
 .buttons {
@@ -81,7 +45,6 @@ form {
 	background-color: rgb(59, 83, 173);
 	margin: 5vh;
 	font-size: 3vh;
-	//padding: 10vh;
 }
 
 .form-control {
@@ -94,38 +57,32 @@ form {
 	margin-top: 5vh;
 	height: 10vh;
 	width: 30vw;
-	font-size: 40px;
+	font-size: 4vh;
 	 margin:0 auto;
     display:block;
     background-color: #31E981;
     box-shadow: 3px 3px 3px black;
     border: none;
-    border-radius: 20px;
-    color: white;
-    transition: 0.3s ease-out;
+    border-radius: 25px;
 }
 #signUp {
     margin-top: 5vh;
     height: 10vh;
     width: 30vw;
-    font-size: 40px;
+    font-size: 4vh;
      margin:0 auto;
     display:block;
     background-color: #31E981;
     box-shadow: 3px 3px 3px black;
-    border-radius: 20px;
-    color: white;
-    transition: 0.3s ease-out;
+    border-radius: 25px;
 }
 
 #submit-login:hover {
 	background-color: grey;
-	transition: 0.3s ease;
 }
 
 #signUp:hover {
 	background-color: grey;
-	transition: 0.3s ease;
 }
 
 #map {
@@ -144,22 +101,6 @@ form {
 	font-size: 3vh;
 }
 
-.form-control {
-	font-size: 3vh;
-	color: black;
-	border-radius: 20px;
-}
+form {
 
-.form-group {
-	font-size: 2.5vh;
-	margin: 2vh;
-}
-
-.form-group label {
-	font-size: 2vh;
-}
-
-@media only screen and (min-width: 0)
-html {
-    font-size: 5vh;
 }

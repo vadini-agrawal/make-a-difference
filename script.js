@@ -136,6 +136,8 @@ function writeUserData(email, name, password, friendsList) {
 // additional collapse events js
 $(document).ready(function(){
   $('.collapsible').collapsible();
+  $('.collapsible').collapsible('open', 0);
+  $('.collapsible').collapsible('open', 0);
 
 });
 =======
