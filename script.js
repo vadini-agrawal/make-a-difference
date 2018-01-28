@@ -42,11 +42,10 @@
         console.log("there was not an error");
         var friendsList = {};
         writeUserData(email, name, password, friendsList);
+        handleSignIn(email, password);
       });
       console.log(email);
       console.log(password);
-
-
 
       ////
       // firebase.database().ref('user').on('value', function(snapshot) {
@@ -55,7 +54,7 @@
       //     console.log(snapshotMap[i].email);
       //   }
       // });
-      var userId = firebase.auth().currentUser.uid;
+      var userId = firebase.auth().currentUser.id;
       return firebase.database().ref().once('value').then(function(snapshot) {
         const users = snapshot.val().user;
         for (var id in users) {
@@ -63,6 +62,22 @@
         }
       });
     }
+
+
+function handleSignIn(email, password) {
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorMessage);
+    // ...
+  }).then(function(data) {
+    console.log("I logged in");
+    window.open("landingPage.html");
+  });
+}
 
 function check(form)/*function to check userid & password*/ {
   /*the following code checkes whether the entered userid and password are matching*/
