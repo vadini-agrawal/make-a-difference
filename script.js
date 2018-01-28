@@ -33,7 +33,6 @@
         var friendsList = {};
         if (okay) {
           writeUserData(email, name, password, friendsList);
-          alert("NEXT PAGE");
           handleSignIn(email, password);
         }
       }).catch(function(error) {
@@ -73,27 +72,38 @@
 function handleSignIn(email, password) {
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
-  firebase.auth().signInWithEmailAndPassword(email, password).then(function(data) {
-    console.log("I logged in");
-  }).catch(function(error) {
+
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+  .then(function() {
+    return firebase.auth().signInWithEmailAndPassword(email, password).then(function(data) {
+      firebase.auth().onAuthStateChanged(user => {
+        if(user) {
+          console.log(user.email);
+          window.location = 'landingPage.html';
+        }
+      });
+      console.log("I logged in");
+      }).catch(function(error) {
+        // Handle Errors here.
+        alert("Failed sign in. Try again");
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        return;
+      // ...
+      });
+    })
+  .catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-    console.log(errorMessage);
-    return;
-    // ...
   });
 
-  firebase.auth().onAuthStateChanged(user => {
-    if(user) {
-      window.location = 'landingPage.html';
-    } else {
-      alert('Failed sign in. Try again');
-    }
-  });
+
 }
 
-
+function handleSignOut() {
+  window.close();
+}
 
 function check(form)/*function to check userid & password*/ {
   /*the following code checkes whether the entered userid and password are matching*/
