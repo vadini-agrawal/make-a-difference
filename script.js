@@ -1,4 +1,4 @@
-  // Initialize Firebase
+// Initialize Firebase
   var config = {
     apiKey: "AIzaSyDxKqUB6_fZgmxLrnP6RclWpnXDPWY-t8M",
     authDomain: "healthy-friends.firebaseapp.com",
@@ -41,15 +41,20 @@
         // [END_EXCLUDE]
         });
       });
+      writeUserData(email, password);
     }
 
 function check(form)/*function to check userid & password*/ {
   /*the following code checkes whether the entered userid and password are matching*/
-  if(form.userid.value == "foo@email.com" && form.passwrd.value == "password") {
+  if(form.userid.value != "" && form.passwrd.value != "") {
     window.open('landingPage.html');/*opens the target page while Id & password matches*/
   } else {
     alert("Error Password or Username");/*displays error message*/
   }
 }
-
-
+function writeUserData(email, password) {
+  firebase.database().ref('user').push({
+    "email": email,
+    "password": password,
+  });
+}
