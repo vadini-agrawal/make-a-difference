@@ -44,6 +44,7 @@
 .form-control {
 	height: 10vh;
 	font-size: 5vh;
+	box-shadow: 3px 3px 3px black;
 }
 
 #submit-login {
@@ -54,6 +55,8 @@
 	 margin:0 auto;
     display:block;
     background-color: #31E981;
+    box-shadow: 3px 3px 3px black;
+    border: none;
 }
 #signUp {
     margin-top: 5vh;
@@ -63,6 +66,15 @@
      margin:0 auto;
     display:block;
     background-color: #31E981;
+    box-shadow: 3px 3px 3px black;
+}
+
+#submit-login:hover {
+	background-color: grey;
+}
+
+#signUp:hover {
+	background-color: grey;
 }
 
 #map {
