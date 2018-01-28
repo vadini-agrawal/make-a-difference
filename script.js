@@ -12,9 +12,13 @@
     function handleSignUp() {
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
-      // if (email.length < 4) {
-      //   alert('Please enter an email address.');
-      //   return;
+      var usersEmails = firebase.database().ref('user').orderByChild('email');
+      // for () {
+      //   if (email == userEmail) {
+      //     alert('This email has already been used.');
+      //     return;
+      //   }
+
       // }
       // if (password.length < 4) {
       //   alert('Please enter a password.');
@@ -23,27 +27,20 @@
       // Sign in with email and pass.
       // [START createwithemail]
       firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        console.log('firebase shit is happening');
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
-        // // [START_EXCLUDE]
-        // if (error) {
-        //   if (errorCode == 'auth/weak-password') {
-        //     alert('The password is too weak.');
-        //   } else {
-        //     alert(errorMessage);
-        //   }
-        // }
-        console.log(error);
-        // [END_EXCLUDE]
-        firebase.auth().currentUser.sendEmailVerification().then(function() {
-        // Email Verification sent!
-        // [START_EXCLUDE]
-        alert('Email Verification Sent!');
-        // [END_EXCLUDE]
-        });
+        console.log(errorMessage);
+        if (errorCode == 'auth/weak-password') {
+          alert('The password is too weak.');
+        } else {
+          alert(errorMessage);
+        }
+      }).then(function(data) {
+        console.log("there was not an error");
+        writeUserData(email, password);
       });
-      writeUserData(email, password);
       console.log(email);
       console.log(password);
     }
