@@ -67,17 +67,20 @@
 function handleSignIn(email, password) {
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
-  firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+  firebase.auth().signInWithEmailAndPassword(email, password).then(function(data) {
+    console.log("I logged in");
+    location.replace("landingPage.html");
+    // ...
+  }).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
     console.log(errorMessage);
     // ...
-  }).then(function(data) {
-    console.log("I logged in");
-    window.open("landingPage.html");
   });
 }
+
+
 
 function check(form)/*function to check userid & password*/ {
   /*the following code checkes whether the entered userid and password are matching*/
