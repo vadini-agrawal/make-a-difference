@@ -10,12 +10,38 @@
 
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="stretchy-navigation/css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="stretchy-navigation/css/style.css"> <!-- Resource style -->
+	<script src="stretchy-navigation/js/modernizr.js"></script> <!-- Modernizr -->
+  	
 </head>
 
 <body class="body-profile"> 
-	<h1 id="profile-name"> INSERT TEXT </h1>
 
-	<table>
+<header>
+	<nav class="cd-stretchy-nav add-content">
+		<a class="cd-nav-trigger" href="#0">
+			<span aria-hidden="true"></span>
+		</a>
+
+		<ul>
+			<li><a href="index.html"><span>Home</span></a></li>
+			<li><a href="landingPage.html"><span>Add Event</span></a></li>
+			<li><a href="profile.html"><span>Profile</span></a></li>
+			<li><a href="index.html"><span>Logout</span></a></li>
+		</ul>
+
+		<span aria-hidden="true" class="stretchy-nav-bg"></span>
+	</nav>
+</header>
+	<h1 id="profile-name"> INSERT TEXT </h1>
+	<br> 
+	<table class="table">
 	  <tr> 
 	  	<th> Friends </th>
 	  <tr>
@@ -24,8 +50,15 @@
 	  <tr>
 	    <td>Eve</td>
 	  </tr>
+	  <tr> 
+	  	<td>Bob </td>
+	  </tr>
+	  <tr> 
+	  	<td>Jane </td>
+	  </tr>
 	</table>
-
+	<script src="stretchy-navigation/js/jquery-2.1.4.js"></script>
+	<script src="stretchy-navigation/js/main.js"></script> <!-- Resource jQuery -->
 </body>
 
 </html>
