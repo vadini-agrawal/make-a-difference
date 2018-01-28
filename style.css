@@ -12,7 +12,7 @@
    position: fixed;
     right: 0;
     bottom: 0;
-    min-width: 100%; 
+    min-width: 100%;
     min-height: 100%;
 >>>>>>> 4ec8a4d1d1834b5521b0f2a77e832509c00d81b3
 }
@@ -21,8 +21,6 @@
 	height: 30vh;
 	margin: 0 auto;
 	display: block;
-<<<<<<< HEAD
-=======
 	animation: 1s infinite beatHeart;
 }
 
@@ -49,7 +47,6 @@ form {
   100% {
     transform: scale(1);
   }
->>>>>>> 4ec8a4d1d1834b5521b0f2a77e832509c00d81b3
 }
 
 .buttons {
@@ -147,9 +144,6 @@ form {
 form {
 
 }
-<<<<<<< HEAD
-=======
-
 @media only screen and (min-width: 0)
 html {
     font-size: 5vh;
@@ -180,4 +174,3 @@ html {
 
 .cd-stretchy-nav {
 }
->>>>>>> 4ec8a4d1d1834b5521b0f2a77e832509c00d81b3
