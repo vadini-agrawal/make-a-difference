@@ -13,7 +13,14 @@
 	display: flex;
 }
 
-.index-body, .body-profile {
+.body-profile {
+	background-color: rgb(59, 83, 173);
+	margin: 5vh;
+	text-align: center;
+	font-size: 4vh;
+}
+
+.index-body {
 	background-color: rgb(59, 83, 173);
 	margin: 5vh;
 	font-size: 3vh;
