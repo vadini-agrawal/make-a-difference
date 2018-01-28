@@ -1,12 +1,55 @@
 .open-image {
+<<<<<<< HEAD
 	padding-top: 8vh;
 	height: 45vh;
+=======
+	padding-top: 5vh;
+	height: 40vh;
+	//position: fixed;
+}
+
+#myVideo {
+   position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+>>>>>>> 4ec8a4d1d1834b5521b0f2a77e832509c00d81b3
 }
 
 .open-image img {
 	height: 30vh;
 	margin: 0 auto;
 	display: block;
+<<<<<<< HEAD
+=======
+	animation: 1s infinite beatHeart;
+}
+
+form {
+	position: fixed;
+	width: 80%;
+	margin-bottom: 5vh;
+	display: block;
+}
+
+@keyframes beatHeart {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+>>>>>>> 4ec8a4d1d1834b5521b0f2a77e832509c00d81b3
 }
 
 .buttons {
@@ -104,3 +147,37 @@
 form {
 
 }
+<<<<<<< HEAD
+=======
+
+@media only screen and (min-width: 0)
+html {
+    font-size: 5vh;
+}
+
+.event-body {
+	background-color: rgb(59, 83, 173);
+	padding: 5vh;
+	color: black;
+}
+
+.event-body button {
+	margin: 0 auto;
+	display: block;
+	background-color: #31E981;
+	padding: 3vh;
+	color: white;
+	font-size: 3vh;
+	border-radius: 20px;
+}
+
+.event-body .form-control {
+	height: 5vh;
+	font-size: 3vh;
+	margin-bottom: 2vh;
+	border-radius: 20px;
+}
+
+.cd-stretchy-nav {
+}
+>>>>>>> 4ec8a4d1d1834b5521b0f2a77e832509c00d81b3

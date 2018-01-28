@@ -8,7 +8,7 @@
     messagingSenderId: "259118374654"
   };
 firebase.initializeApp(config);
-
+var userNameGlobal = "";
     function handleSignUp() {
       var email = document.getElementById('email').value;
       var name = document.getElementById('name').value;
@@ -82,6 +82,7 @@ function handleSignIn(email, password) {
       firebase.auth().onAuthStateChanged(user => {
         if(user) {
           console.log(user.email);
+          userNameGlobal = user.name;
           window.location = 'landingPage.html';
         }
       });
@@ -107,7 +108,8 @@ function addEvent(eventName, eventDescription, startTime, endTime) {
   var eventDescription = document.getElementById('eventDescription').value;
   var startTime = document.getElementById('startTime').value;
   var endTime = document.getElementById('endTime').value;
-  writeEventData(eventName, eventDescription, startTime, endTime);
+  var userName = document.getElementById('userName').value;
+  writeEventData(eventName, userName, eventDescription, startTime, endTime);
 
 }
 
@@ -131,7 +133,6 @@ function writeUserData(email, name, password, friendsList) {
     "friendsList": friendsList,
   });
 }
-<<<<<<< HEAD
 
 // additional collapse events js
 $(document).ready(function(){
@@ -140,13 +141,18 @@ $(document).ready(function(){
   $('.collapsible').collapsible('open', 0);
 
 });
-=======
-function writeEventData(eventName, eventDescription, startTime, endTime) {
-  firebase.database().ref('user').push({
-    "eventName": eventName,
-    "eventDescription": eventDescription,
-    "startTime": startTime,
-    "endTime": endTime,
-  });
+
+function writeEventData(eventName,  userName, eventDescription, startTime, endTime) {
+// var user = firebase.auth().currentUser;
+// if(user) {
+//   console.log(user.name);
+//   userNameGlobal = user.name;
+// }
+firebase.database().ref('events').push({
+  "eventName": eventName,
+  "userName" : userName,
+  "eventDescription": eventDescription,
+  "startTime": startTime,
+  "endTime": endTime,
+});
 }
->>>>>>> afe3cbb9422e26f7caba1582d99fbd263d1ee26d

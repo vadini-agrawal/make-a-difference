@@ -5,41 +5,68 @@
 	<link rel="stylesheet" href="stretchy-navigation/css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="stretchy-navigation/css/style.css"> <!-- Resource style -->
 	<script src="stretchy-navigation/js/modernizr.js"></script> <!-- Modernizr -->
-	<script src="script.js"></script>
 	<!-- firebase url -->
 	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
+	<script src="script.js"></script>
 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body>
-	<div class="input-field">
-		<label for="eventName">Event Name: </label>
-		<input name="userid" type="textbox" id="eventName">
+<body class="event-body">
+<header>
+	<nav class="cd-stretchy-nav">
+		<a class="cd-nav-trigger" href="#0">			<span aria-hidden="true"></span>
+		</a>
+
+		<ul>
+			<li><a href="landingPage.html" class="active"><span>Home</span></a></li>
+			<li><a href="event.html"><span>Add Event</span></a></li>
+			<li><a href="script.js:handleSignOut();"><span>Logout</span></a></li>
+		</ul>
+
+		<span aria-hidden="true" class="stretchy-nav-bg"></span>
+	</nav>
+</header>
+
+<div class="open-image">
+		<img src="heartbeat (1).png">
+	</div>
+
+	<div class="input-field form-group">
+		<input class="form-control" name="userid" type="textbox" id="eventName" placeholder="Event Name">
 
 	</div>
-	<div class="input-field">
-		<label for="eventDescription">Event Description:</label>
-		<input name="userid" type="textbox" id="eventDescription">
+	<div class="input-field form-group">
+		<!-- <label for="eventDescription">Event Description:</label> -->
+		<input class="form-control" name="userid" type="textbox" id="eventDescription" placeholder="Event Description">
 
 	</div>
-	<div class="input-field">
-		<label for="startTime"> Start Time: </label>
-		<input name="userid" type="textbox" id="startTime">
+	<div class="input-field form-group">
+		<!-- <label for="startTime"> Start Time: </label> -->
+		<input class="form-control" name="userid" type="textbox" id="startTime" placeholder="Start Time">
 	</div>
-	<div class="input-field">
-		<label for="endTime">End Time: </label>
-		<input name="userid" type="textbox" id="endTime">
+	<div class="input-field form-group">
+		<!-- <label for="endTime">End Time: </label> -->
+		<input class="form-control" name="userid" type="textbox" id="endTime" placeholder="End Time">
 
 	</div>
 	<div class="buttons">
-		<button id="submit-event" value="event" type="submit" onclick="addEvent()" class="waves-effect waves-light btn">Create Event</button>
+		<button id="submit-event" value="event" type="submit" onclick="addEvent()" class="waves-effect waves-light btn">CREATE EVENT</button>
 	</div>
 	<script>
 	</script>
+
+	 <script src="stretchy-navigation/js/jquery-2.1.4.js"></script>
+	<script src="stretchy-navigation/js/main.js"></script> <!-- Resource jQuery -->
 	<br>
 
 
