@@ -162,3 +162,29 @@ form {
 html {
     font-size: 5vh;
 }
+
+.event-body {
+	background-color: rgb(59, 83, 173);
+	padding: 5vh;
+	color: black;
+}
+
+.event-body button {
+	margin: 0 auto;
+	display: block;
+	background-color: #31E981;
+	padding: 3vh;
+	color: white;
+	font-size: 3vh;
+	border-radius: 20px;
+}
+
+.event-body .form-control {
+	height: 5vh;
+	font-size: 3vh;
+	margin-bottom: 2vh;
+	border-radius: 20px;
+}
+
+.cd-stretchy-nav {
+}
