@@ -1,19 +1,48 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 
-<head> 
-	<link rel="stylesheet" href="style.css"> 
-
+<head>
+	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="stretchy-navigation/css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="stretchy-navigation/css/style.css"> <!-- Resource style -->
 	<script src="stretchy-navigation/js/modernizr.js"></script> <!-- Modernizr -->
+	<script src="script.js"></script>
+	<!-- firebase url -->
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
+
 
 </head>
 
-<body> 
-	<form> 
-		
+<body>
+	<div class="input-field">
+		<label for="eventName">Event Name: </label>
+		<input name="userid" type="textbox" id="eventName">
+
+	</div>
+	<div class="input-field">
+		<label for="eventDescription">Event Description:</label>
+		<input name="userid" type="textbox" id="eventDescription">
+
+	</div>
+	<div class="input-field">
+		<label for="startTime"> Start Time: </label>
+		<input name="userid" type="textbox" id="startTime">
+	</div>
+	<div class="input-field">
+		<label for="endTime">End Time: </label>
+		<input name="userid" type="textbox" id="endTime">
+
+	</div>
+	<div class="buttons">
+		<button id="submit-event" value="event" type="submit" onclick="addEvent()" class="waves-effect waves-light btn">Create Event</button>
+	</div>
+	<script>
+	</script>
+	<br>
 
 
 
 </body>
-</html> 
+</html>

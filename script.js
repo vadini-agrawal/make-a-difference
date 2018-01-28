@@ -7,7 +7,7 @@
     storageBucket: "healthy-friends.appspot.com",
     messagingSenderId: "259118374654"
   };
-  firebase.initializeApp(config);
+firebase.initializeApp(config);
 
     function handleSignUp() {
       var email = document.getElementById('email').value;
@@ -33,13 +33,11 @@
         var friendsList = {};
         if (okay) {
           writeUserData(email, name, password, friendsList);
-          alert("NEXT PAGE");
           handleSignIn(email, password);
         }
       }).catch(function(error) {
         console.log('firebase shit is happening');
         // Handle Errors here.
-        okay = false;
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(errorMessage);
@@ -47,8 +45,12 @@
           alert('The password is too weak.');
         } else {
           alert(errorMessage);
-        return false;
         }
+      }).then(function(data) {
+        console.log("there was not an error");
+        var friendsList = {};
+        writeUserData(email, name, password, friendsList);
+        handleSignIn(email, password);
       });
       console.log(email);
       console.log(password);
@@ -73,27 +75,45 @@
 function handleSignIn(email, password) {
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
-  firebase.auth().signInWithEmailAndPassword(email, password).then(function(data) {
-    console.log("I logged in");
-  }).catch(function(error) {
+
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+  .then(function() {
+    return firebase.auth().signInWithEmailAndPassword(email, password).then(function(data) {
+      firebase.auth().onAuthStateChanged(user => {
+        if(user) {
+          console.log(user.email);
+          window.location = 'landingPage.html';
+        }
+      });
+      console.log("I logged in");
+      }).catch(function(error) {
+        // Handle Errors here.
+        alert("Failed sign in. Try again");
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        return;
+      // ...
+      });
+    })
+  .catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-    console.log(errorMessage);
-    return;
-    // ...
-  });
-
-  firebase.auth().onAuthStateChanged(user => {
-    if(user) {
-      window.location = 'landingPage.html';
-    } else {
-      alert('Failed sign in. Try again');
-    }
   });
 }
 
+function addEvent(eventName, eventDescription, startTime, endTime) {
+  var eventName = document.getElementById('eventName').value;
+  var eventDescription = document.getElementById('eventDescription').value;
+  var startTime = document.getElementById('startTime').value;
+  var endTime = document.getElementById('endTime').value;
+  writeEventData(eventName, eventDescription, startTime, endTime);
 
+}
+
+function handleSignOut() {
+  window.close();
+}
 
 function check(form)/*function to check userid & password*/ {
   /*the following code checkes whether the entered userid and password are matching*/
@@ -111,9 +131,20 @@ function writeUserData(email, name, password, friendsList) {
     "friendsList": friendsList,
   });
 }
+<<<<<<< HEAD
 
 // additional collapse events js
 $(document).ready(function(){
   $('.collapsible').collapsible();
 
 });
+=======
+function writeEventData(eventName, eventDescription, startTime, endTime) {
+  firebase.database().ref('user').push({
+    "eventName": eventName,
+    "eventDescription": eventDescription,
+    "startTime": startTime,
+    "endTime": endTime,
+  });
+}
+>>>>>>> afe3cbb9422e26f7caba1582d99fbd263d1ee26d
