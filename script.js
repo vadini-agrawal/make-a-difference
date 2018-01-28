@@ -29,9 +29,10 @@
         // [START_EXCLUDE]
         if (errorCode == 'auth/weak-password') {
           alert('The password is too weak.');
-        } else {
-          alert(errorMessage);
         }
+        // else {
+        //   alert(errorMessage);
+        // }
         console.log(error);
         // [END_EXCLUDE]
         firebase.auth().currentUser.sendEmailVerification().then(function() {
@@ -42,6 +43,8 @@
         });
       });
       writeUserData(email, password);
+      console.log(email);
+      console.log(password);
     }
 
 function check(form)/*function to check userid & password*/ {
