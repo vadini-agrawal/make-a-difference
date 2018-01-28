@@ -13,11 +13,17 @@
 	display: flex;
 }
 
+.feed {
+	background-color: #31E981;
+	height: 40vh;
+}
+
 .body-profile {
 	background-color: rgb(59, 83, 173);
 	margin: 5vh;
 	text-align: center;
 	font-size: 4vh;
+	color: black;
 }
 
 .body-profile h1{
@@ -57,6 +63,7 @@
     background-color: #31E981;
     box-shadow: 3px 3px 3px black;
     border: none;
+    border-radius: 25px;
 }
 #signUp {
     margin-top: 5vh;
@@ -67,6 +74,7 @@
     display:block;
     background-color: #31E981;
     box-shadow: 3px 3px 3px black;
+    border-radius: 25px;
 }
 
 #submit-login:hover {
