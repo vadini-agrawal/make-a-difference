@@ -11,6 +11,7 @@
 
     function handleSignUp() {
       var email = document.getElementById('email').value;
+      var name = document.getElementById('name').value;
       var password = document.getElementById('password').value;
       var usersEmails = firebase.database().ref('user').orderByChild('email');
       // for () {
@@ -39,10 +40,28 @@
         }
       }).then(function(data) {
         console.log("there was not an error");
-        writeUserData(email, password);
+        var friendsList = {};
+        writeUserData(email, name, password, friendsList);
       });
       console.log(email);
       console.log(password);
+
+
+
+      ////
+      // firebase.database().ref('user').on('value', function(snapshot) {
+      //   var snapshotMap = snapshot.val();
+      //   for (var i = 0; i < snapshotMap.length; i++) {
+      //     console.log(snapshotMap[i].email);
+      //   }
+      // });
+      var userId = firebase.auth().currentUser.uid;
+      return firebase.database().ref().once('value').then(function(snapshot) {
+        const users = snapshot.val().user;
+        for (var id in users) {
+          console.log(users[id].email);
+        }
+      });
     }
 
 function check(form)/*function to check userid & password*/ {
@@ -53,10 +72,11 @@ function check(form)/*function to check userid & password*/ {
     alert("Error Password or Username");/*displays error message*/
   }
 }
-function writeUserData(email, password) {
-  console.log("hellp");
+function writeUserData(email, name, password, friendsList) {
   firebase.database().ref('user').push({
     "email": email,
+    "name": name,
     "password": password,
+    "friendsList": friendsList,
   });
 }
