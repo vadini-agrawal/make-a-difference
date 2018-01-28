@@ -20,6 +20,12 @@
 	font-size: 4vh;
 }
 
+table {
+	background-color: #31E981;
+	margin: 0 auto;
+	display: block;
+}
+
 .index-body {
 	background-color: rgb(59, 83, 173);
 	margin: 5vh;
