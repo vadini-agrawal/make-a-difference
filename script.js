@@ -27,7 +27,15 @@ firebase.initializeApp(config);
       // }
       // Sign in with email and pass.
       // [START createwithemail]
-      firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+      var okay = true;
+      firebase.auth().createUserWithEmailAndPassword(email, password).then(function(data) {
+        console.log("there was not an error");
+        var friendsList = {};
+        if (okay) {
+          writeUserData(email, name, password, friendsList);
+          handleSignIn(email, password);
+        }
+      }).catch(function(error) {
         console.log('firebase shit is happening');
         // Handle Errors here.
         var errorCode = error.code;
@@ -67,16 +75,30 @@ firebase.initializeApp(config);
 function handleSignIn(email, password) {
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
-  firebase.auth().signInWithEmailAndPassword(email, password).then(function(data) {
-    console.log("I logged in");
-    location.replace("landingPage.html");
-    // ...
-  }).catch(function(error) {
+
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+  .then(function() {
+    return firebase.auth().signInWithEmailAndPassword(email, password).then(function(data) {
+      firebase.auth().onAuthStateChanged(user => {
+        if(user) {
+          console.log(user.email);
+          window.location = 'landingPage.html';
+        }
+      });
+      console.log("I logged in");
+      }).catch(function(error) {
+        // Handle Errors here.
+        alert("Failed sign in. Try again");
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        return;
+      // ...
+      });
+    })
+  .catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-    console.log(errorMessage);
-    // ...
   });
 }
 
@@ -86,6 +108,11 @@ function addEvent(eventName, eventDescription, startTime, endTime) {
   var startTime = document.getElementById('startTime').value;
   var endTime = document.getElementById('endTime').value;
   writeEventData(eventName, eventDescription, startTime, endTime);
+
+}
+
+function handleSignOut() {
+  window.close();
 }
 
 function check(form)/*function to check userid & password*/ {
