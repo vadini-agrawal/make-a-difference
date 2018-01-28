@@ -22,7 +22,7 @@
 	<script src="script.js"></script>
 
 	  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+ <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">-->
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
@@ -30,6 +30,11 @@
 </head>
 
 <body class="index-body">
+
+	<video autoplay muted loop id="myVideo">
+	  <source src="Workout.mp4" type="video/mp4">
+	</video>
+
 	<!--<form name="login">
 	Username<input type="text" name="userid"/>
 	Password<input type="password" name="pswrd"/>
@@ -37,25 +42,31 @@
 	<input type="reset" value="Cancel"/>
 	</form>-->
 	<div class="open-image">
-		<img src="man.png">
+		<img src="heartbeat (1).png">
 	</div>
 
 	<form name="login" onsubmit="return false">
- 		<div class="input-field">
-    		<input name="userid" type="email" class="validate" id="email">
-    		<label for="email">Email address:</label>
+ 		<div class="form-group">
+ 			<!-- <label for="email">Email address:</label> -->
+    		<input name="userid" type="email" class="form-control" id="email" placeholder="Email">
   		</div>
+<<<<<<< HEAD
   		<div class="input-field">
     		<input name="userid" type="name" class="validate" id="name">
     		<label for="name">Name:</label>
+=======
+  		<div class="form-group">
+  			<!-- <label for="name">Name:</label> -->
+    		<input name="name" type="text" class="form-control" id="name" placeholder="Name">
+>>>>>>> 5bad77a174d776f194cefdb40d2a79d8f08abd79
   		</div>
-	  <div class="input-field">
-	    <input name="pswrd" type="password" class="validate" id="password">
-	    <label for="pwd">Password:</label>
+	  <div class="form-group">
+	    <!-- <label for="pwd">Password:</label> -->
+	    <input name="pswrd" type="password" class="form-control" id="password" placeholder="Password">
 	  </div> <br>
 	  <div class="buttons">
-		  <button id="submit-login" value="login" type="submit" onclick="handleSignIn()" class="waves-effect waves-light btn">Sign In</button>
-		  <button id="signUp" value="login" type="button" onclick="handleSignUp()" class="waves-effect waves-light btn">Sign Up</button>
+		  <button id="submit-login" value="login" type="submit" onclick="handleSignIn()" class="waves-effect waves-light btn">SIGN IN</button>
+		  <button id="signUp" value="login" type="button" onclick="handleSignUp()" class="waves-effect waves-light btn">SIGN UP</button>
 	  </div>
 	</form>
 </body>
