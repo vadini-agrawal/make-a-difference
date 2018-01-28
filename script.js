@@ -27,9 +27,19 @@
       // }
       // Sign in with email and pass.
       // [START createwithemail]
-      firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+      var okay = true;
+      firebase.auth().createUserWithEmailAndPassword(email, password).then(function(data) {
+        console.log("there was not an error");
+        var friendsList = {};
+        if (okay) {
+          writeUserData(email, name, password, friendsList);
+          alert("NEXT PAGE");
+          handleSignIn(email, password);
+        }
+      }).catch(function(error) {
         console.log('firebase shit is happening');
         // Handle Errors here.
+        okay = false;
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(errorMessage);
@@ -37,12 +47,8 @@
           alert('The password is too weak.');
         } else {
           alert(errorMessage);
+        return false;
         }
-      }).then(function(data) {
-        console.log("there was not an error");
-        var friendsList = {};
-        writeUserData(email, name, password, friendsList);
-        handleSignIn(email, password);
       });
       console.log(email);
       console.log(password);
@@ -69,14 +75,21 @@ function handleSignIn(email, password) {
   var password = document.getElementById('password').value;
   firebase.auth().signInWithEmailAndPassword(email, password).then(function(data) {
     console.log("I logged in");
-    location.replace("landingPage.html");
-    // ...
   }).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
     console.log(errorMessage);
+    return;
     // ...
+  });
+
+  firebase.auth().onAuthStateChanged(user => {
+    if(user) {
+      window.location = 'landingPage.html';
+    } else {
+      alert('Failed sign in. Try again');
+    }
   });
 }
 
