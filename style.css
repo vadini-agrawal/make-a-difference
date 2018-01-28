@@ -1,8 +1,6 @@
 .open-image {
-<<<<<<< HEAD
 	padding-top: 8vh;
 	height: 45vh;
-=======
 	padding-top: 5vh;
 	height: 40vh;
 	//position: fixed;
@@ -14,7 +12,6 @@
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
->>>>>>> 4ec8a4d1d1834b5521b0f2a77e832509c00d81b3
 }
 
 .open-image img {
