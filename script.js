@@ -111,3 +111,9 @@ function writeUserData(email, name, password, friendsList) {
     "friendsList": friendsList,
   });
 }
+
+// additional collapse events js
+$(document).ready(function(){
+  $('.collapsible').collapsible();
+
+});
