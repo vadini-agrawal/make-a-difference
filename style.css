@@ -1,5 +1,5 @@
 .open-image {
-	//padding-top: 5vh;
+	padding-top: 5vh;
 	height: 40vh;
 	//position: fixed;
 }
@@ -23,7 +23,6 @@ form {
 	position: fixed;
 	width: 80%;
 	margin-bottom: 5vh;
-	margin-right: 10%;
 	display: block;
 }
 
